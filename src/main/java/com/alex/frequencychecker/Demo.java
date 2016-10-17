@@ -1,13 +1,13 @@
 package com.alex.frequencychecker;
 
-import java.util.stream.IntStream;
-
 import com.alex.frequencychecker.impl.FrequencyCheckerImpl;
+
+import java.util.stream.IntStream;
 
 /**
  * FrequencyCheckerImpl demo.
  */
-public class Runner {
+public class Demo {
     private static final FrequencyChecker frequencyChecker = new FrequencyCheckerImpl(600, 2);
     private static final int threadsCount = 3;
 
