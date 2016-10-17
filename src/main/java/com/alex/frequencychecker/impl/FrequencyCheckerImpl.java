@@ -4,7 +4,7 @@ import com.alex.frequencychecker.FrequencyChecker;
 import com.alex.frequencychecker.impl.util.LongCircularBuffer;
 
 /**
- * A thread-safe low-garbage implementation.
+ * A thread-safe low garbage implementation.
  */
 public class FrequencyCheckerImpl implements FrequencyChecker {
     private final int interval;

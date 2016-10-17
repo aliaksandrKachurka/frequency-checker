@@ -8,14 +8,19 @@ import java.util.stream.IntStream;
  * FrequencyCheckerImpl demo.
  */
 public class Demo {
-    private static final FrequencyChecker frequencyChecker = new FrequencyCheckerImpl(600, 2);
+    private static final int intervalMillis = 600;
+    private static final int maxMessagesPerInterval = 3;
+
     private static final int threadsCount = 3;
 
+    private static final FrequencyChecker frequencyChecker
+            = new FrequencyCheckerImpl(intervalMillis, maxMessagesPerInterval);
+
     public static void main(String[] args) {
-        IntStream.range(0, threadsCount).forEach(i -> perform());
+        IntStream.range(0, threadsCount).forEach(i -> performActionRepeatedly());
     }
 
-    private static void perform() {
+    private static void performActionRepeatedly() {
         new Thread(() -> {
             while (true) {
                 if (frequencyChecker.isAllowed()) {
