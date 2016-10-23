@@ -3,11 +3,11 @@ Lock-free low garbage filter for actions rate restriction.
 
 ## Use case
 Consider a case when application threads perform repeatable actions concurrently. Actions execution frequency should be bounded somehow. 
-For instance a system generates messages at unknown random intervals and *at most 5 messages per minute* should be accepted.
+For instance a system generates messages at unknown random intervals and *at most 5000 messages per second* should be accepted.
 
 The problem could be solved with `FrequencyCheckerImpl` in the following way:
 ```java
-FrequencyChecker frequencyChecker = new FrequencyCheckerImpl(60000, 5);
+FrequencyChecker frequencyChecker = new FrequencyCheckerImpl(1000, 5000);
 ...
 if (frequencyChecker.isAllowed()) {
     processMessage();

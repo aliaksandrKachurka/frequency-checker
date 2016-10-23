@@ -8,8 +8,8 @@ import java.util.stream.IntStream;
  * FrequencyCheckerImpl demo.
  */
 public class Demo {
-    private static final int intervalMillis = 600;
-    private static final int maxMessagesPerInterval = 3;
+    private static final int intervalMillis = 1000;
+    private static final int maxMessagesPerInterval = 5000;
 
     private static final int threadsCount = 3;
 
